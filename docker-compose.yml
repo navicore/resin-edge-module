@@ -5,4 +5,5 @@ services:
     expose:
       - "1993"
       - "9001"
-
+    privileged: true
+    restart: always
