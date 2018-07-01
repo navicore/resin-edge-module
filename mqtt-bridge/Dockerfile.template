@@ -17,4 +17,4 @@ COPY lib/*.jar /app/
 
 WORKDIR /app
 
-ENTRYPOINT ["java","-cp", "/app/MqttBridge.jar"]
+ENTRYPOINT ["java","-jar","/app/MqttBridge.jar"]
