@@ -10,7 +10,7 @@ services:
     network_mode: host
   mqtt-bridge:
     links:
-      - mqtt-broker
+      - "mqtt-broker:mqtt-broker"
     build: ./mqtt-bridge
     depends_on:
       - mqtt-broker
