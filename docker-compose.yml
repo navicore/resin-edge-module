@@ -7,6 +7,7 @@ services:
       - "9001"
     privileged: true
     restart: always
+    network_mode: host
     networks:
       svcnet:
         aliases:
@@ -16,10 +17,11 @@ services:
     depends_on:
       - mqtt-broker
     restart: always
+    network_mode: host
     networks:
       svcnet:
         aliases:
           - mqtt-bridge
 networks:
   svcnet:
-    driver: host
+    driver: bridge
