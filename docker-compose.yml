@@ -14,3 +14,4 @@ services:
       - mqtt-broker
     restart: always
     network_mode: host
+
