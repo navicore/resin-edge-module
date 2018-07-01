@@ -1,8 +1,9 @@
-MAINTAINER Ed Sweeney <ed@onextent.com>
+FROM resin/%%RESIN_MACHINE_NAME%%-openjdk AS buildstep
 ###############
 # build stage #
 ###############
-FROM resin/%%RESIN_MACHINE_NAME%%-openjdk AS buildstep
+
+MAINTAINER Ed Sweeney <ed@onextent.com>
 
 RUN echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
