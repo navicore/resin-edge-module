@@ -3,8 +3,6 @@ FROM resin/%%RESIN_MACHINE_NAME%%-openjdk AS buildstep
 # build stage #
 ###############
 
-MAINTAINER Ed Sweeney <ed@onextent.com>
-
 RUN echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
 
@@ -19,7 +17,9 @@ RUN mkdir -p /app
 ####################
 # deployment stage #
 ####################
-FROM resin/%%RESIN_MACHINE_NAME%%-openjdk AS buildstep
+FROM resin/%%RESIN_MACHINE_NAME%%-openjdk
+
+MAINTAINER Ed Sweeney <ed@onextent.com>
 
 COPY --from=buildstep /mqtt-bridge/target/scala-2.12//*.jar /app/
 
