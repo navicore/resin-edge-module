@@ -11,6 +11,6 @@ services:
   amqp-bridge:
     links:
       - mqtt-broker
-    image: navicore/mqtt-bridge
+    build: ./mqtt-bridge
     depends_on:
       - mqtt-broker
