@@ -1,0 +1,8 @@
+version: '2'
+services:
+  mqtt-broker:
+    build: ./mqtt-broker
+    expose:
+      - "1993"
+      - "9001"
+
