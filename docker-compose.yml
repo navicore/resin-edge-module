@@ -8,7 +8,7 @@ services:
     privileged: true
     restart: always
     network_mode: host
-  amqp-bridge:
+  mqtt-bridge:
     links:
       - mqtt-broker
     build: ./mqtt-bridge
