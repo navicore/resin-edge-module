@@ -8,3 +8,9 @@ services:
     privileged: true
     restart: always
     network_mode: host
+  amqp-bridge:
+    links:
+      - mqtt-broker
+    image: navicore/mqtt-bridge
+    depends_on:
+      - mqtt-broker
