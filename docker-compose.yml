@@ -7,12 +7,14 @@ services:
     expose:
       - "1883"
       - "9001"
+    privileged: true
     restart: always
     network_mode: host
     volumes: 
       - "mqtt-data:/mqtt/data"
   mqtt-bridge:
     build: ./mqtt-bridge
+    privileged: true
     depends_on:
       - mqtt-broker
     restart: always
