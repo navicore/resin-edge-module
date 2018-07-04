@@ -11,7 +11,7 @@ services:
     restart: always
     network_mode: host
     volumes: 
-      - 'mqtt-data:/mqtt/data'
+      - "mqtt-data:/mqtt/data"
   mqtt-bridge:
     build: ./mqtt-bridge
     depends_on:
