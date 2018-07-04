@@ -7,7 +7,6 @@ services:
     expose:
       - "1883"
       - "9001"
-    privileged: true
     restart: always
     network_mode: host
     volumes: 
