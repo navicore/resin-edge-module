@@ -26,5 +26,5 @@ COPY --from=buildstep /mqtt-bridge/target/scala-2.12/*.jar /app/
 
 WORKDIR /app
 
-CMD ["java","-jar","/app/MqttBridge.jar"]
+CMD ["java","-Xms125m","-Xmx125m","-jar","/app/MqttBridge.jar"]
 
