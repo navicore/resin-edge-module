@@ -1,6 +1,6 @@
 version: '2'
-volumes: 
-  mqttdata:
+# volumes: 
+#   mqttdata:
 services:
   mqtt-broker:
     build: ./mqtt-broker
@@ -10,8 +10,8 @@ services:
     privileged: true
     restart: always
     network_mode: host
-    volumes: 
-      - "mqttdata:/mqtt/data"
+    # volumes: 
+    #   - "mqttdata:/mqtt/data"
   mqtt-bridge:
     build: ./mqtt-bridge
     privileged: true
