@@ -22,7 +22,8 @@ RUN apt-get update && apt-get install -y wget && \
     #adduser --system --disabled-password --disabled-login mosquitto && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /mqtt/config /mqtt/log /mqtt/data
+#RUN mkdir -p /mqtt/config /mqtt/log /mqtt/data
+RUN mkdir -p /mqtt/config /mqtt/log
 COPY config /mqtt/config
 #RUN chown -R mosquitto:mosquitto /mqtt
 
